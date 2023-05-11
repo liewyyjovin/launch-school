@@ -1,0 +1,99 @@
+
+# Write psuedocode for the following examples
+
+
+1. a function that returns the sum of two numbers
+
+START
+
+function that takes in two arguments: num1, num2
+returns num1 + num2
+
+END
+
+
+
+2. a function that takes an array of strings, and returns a string that is all those strings concatenated together
+
+
+START
+function that takes in one argument: arrayOfStrings
+
+SET iterator = 1
+SET stringGroup = ""
+WHILE iterator <= length of array
+  SET stringGroup = stringGroup + arrayOfStrings[iterator]
+  iterator = iterator + 1
+
+PRINT stringGroup  
+
+END
+
+
+
+3. a method that takes an array of integers, and returns a new array with every other element from the original array, 
+starting with the first element. For instance:
+everyOther([1,4,7,2,5]); // => [1,7,5]
+
+START
+
+function that takes in onr argument: arrayOfIntegers
+
+SET  iterator = 1
+SET newArray = []
+WHILE iterator <= length of array
+  IF iterator = first index
+    newArray appends arrayOfIntegers(iterator) 
+  IF (iterator >  first index) && (iterator % 2 is 0) 
+    newArray appends arrayOfIntegers(iterator)
+  ELSE skips over that arrayOfIntegers(iterator)
+
+PRINT newArray
+
+END
+
+
+4. a function that determines the index of the 3rd occurrence of a given character in a string. 
+For instance, if the given character is 'x' and the string is 'axbxcdxex', the function should return 6 (the index of the 3rd 'x'). 
+If the given character does not occur at least 3 times, return null.
+
+START
+
+a function that takes in two string arguments: str, char
+
+use method to split the string into array of characters
+
+SET arrayOfCharacters = method to split strings into array
+SET characterCounter = 0
+
+WHILE iterator <= length of array
+  IF char matches arrayOfCharacters[iterator] => characterCounter + 1
+    IF characterCounter === 3
+      PRINT (iterator + 1)
+    ELSE null
+  iterator = iterator + 1
+
+
+END
+
+5. a function that takes two arrays of numbers and returns the result of merging the arrays. 
+The elements of the first array should become the elements at the even indexes of the returned array, 
+while the elements of the second array should become the elements at the odd indexes. 
+For instance:
+merge([1, 2, 3], [4, 5, 6]); // => [1, 4, 2, 5, 3, 6]
+You may assume that both array arguments have the same number of elements.
+
+START
+
+a function that takes in two array arguments: array1, array 2
+
+SET mergedArray = []
+
+What we want is: mergedArray = array1[0] + array2[0] + array1[1] + array2[1] + ... array1[n] + array2[n]
+
+We can get the length of arrays using legnth function
+
+once we have the length, we can start looping and using an append to append it to the empty array
+
+
+END
