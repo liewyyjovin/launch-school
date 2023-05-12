@@ -1,0 +1,23 @@
+{
+  "en":
+    {
+      "welcome": "Welcome to the calculator!",
+      "firstQuestion": "What's the first number?",
+      "secondQuestion": "What's the second number?",
+      "thirdQuestion": "What operation would you like to perform?\n1) Add 2) Subtract 3) Multiply 4) Divide",
+      "invalidNumber": "That was not a number... please try again!",
+      "invalidOperation": "Must choose 1, 2, 3, or, 4.",
+      "calculateAgain": "Your calculation is complete - would you like to start another session? (y/n)"
+  }, 
+  "es":
+    {
+      "welcome": "¡Bienvenido a la calculadora!",
+      "firstQuestion": "¿Cuál es el primer número?",
+      "secondQuestion": "¿Cuál es el segundo número?",
+      "thirdQuestion": "¿Qué operación le gustaría realizar?\n1) Sumar 2) Restar 3) Multiplicar 4) Dividir",
+      "invalidNumber": "Eso no era un número... ¡inténtalo de nuevo!",
+      "invalidOperation": "Debe elegir 1, 2, 3 o 4.",
+      "calculateAgain": "Su cálculo está completo. ¿Desea iniciar otra sesión? (y/n)"
+
+    }
+}

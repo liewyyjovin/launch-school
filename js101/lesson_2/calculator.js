@@ -1,7 +1,9 @@
-/* eslint-disable max-statements */
-const readline = require('readline-sync');
+const QUESTION = require('./calculator_messages.json');
+const READLINE = require('readline-sync');
+const LANGUAGE = 'en';
 
-function prompt(message) {
+function prompt(key) {
+  let message = question(key, LANGUAGE);
   console.log(`=> ${message}`);
 }
 
@@ -9,35 +11,39 @@ function invalidNumber(number) {
   return number.trimStart() === '' || Number.isNaN(Number(number));
 }
 
-// eslint-disable-next-line max-lines-per-function
-function calculator() {
-  // 1. Welcome!
-  prompt('Welcome to calculator!');
+function question(question, lang = 'en') {
+  return QUESTION[lang][question];
+}
+
+// 1. Welcome!
+prompt('welcome');
+
+while (true) {
 
   // 2. Ask for first number
-  prompt("What's the first number?");
-  let number1 = readline.question();
+  prompt('firstQuestion');
+  let number1 = READLINE.question();
 
   while (invalidNumber(number1)) {
-    console.log('that was not a number... please try again');
-    number1 = readline.question();
+    prompt('invalidNumber');
+    number1 = READLINE.question();
   }
 
   // 3. Ask for second number
-  prompt("What's the second number?");
-  let number2 = readline.question();
+  prompt('secondQuestion');
+  let number2 = READLINE.question();
 
   while (invalidNumber(number2)) {
-    console.log('that was not a number... please try again');
-    number2 = readline.question();
+    prompt('invalidNumber');
+    number2 = READLINE.question();
   }
   // 4. Ask which operation they would like to use
-  prompt("What operation would you like to perform?\n1) Add 2) Subtract 3) Multiply 4) Divide");
-  let operation = readline.question();
+  prompt('thirdQuestion');
+  let operation = READLINE.question();
 
   while (!['1', '2', '3', '4'].includes(operation)) {
-    prompt('Must choose 1, 2, 3, or 4');
-    operation = readline.question();
+    prompt('invalidOperation');
+    operation = READLINE.question();
   }
   let output;
   switch (operation) {
@@ -58,24 +64,8 @@ function calculator() {
   console.log(`The result is ${output}`);
 
   // 5. Ask the user if he/she would like to perform another calculation.
-  prompt('Your calculation is complete - would you like to start another session?');
-  let decision = readline.question();
+  prompt('calculateAgain');
+  let decision = READLINE.question();
 
-  while (!['yes', 'no'].includes(decision)) {
-    prompt("I don't understand - please answer yes or no to proceed.");
-    decision = readline.question();
-  }
-
-  switch (decision) {
-    case 'yes':
-      calculator();
-      break;
-    case 'no':
-      console.log("This calculator session has ended, thank you for your time!");
-      break;
-  }
+  if (decision[0].toLowerCase() !== 'y') break;
 }
-
-calculator();
-
-
